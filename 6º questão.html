@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordenar Números</title>
+    <script>
+        function ordenarNumeros() {
+            const listaDeNumeros = [5, 2, 9, 1, 7, 10, 3, 92, 105, 71];
+            
+            const numerosOrdenados = listaDeNumeros.sort(function(a, b) {
+                return a - b; 
+            });
+
+            document.getElementById('resultado').innerHTML = "Números ordenados: " + numerosOrdenados.join(', ');
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Ordenar Números em Ordem Crescente</h1>
+
+    <p>Clique no botão para ordenar a lista de números: [5, 2, 9, 1, 7, 10, 3, 92, 105, 71]</p>
+
+    <button onclick="ordenarNumeros()">Ordenar Números</button>
+
+    <p id="resultado"></p>
+
+</body>
+</html>

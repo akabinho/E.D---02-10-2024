@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somar Números da Lista</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Somar Números da Lista</h1>
+    <p>Lista original: <span id="original-list"></span></p>
+    <button onclick="somarNumeros()">Somar Números</button>
+    <div class="result" id="result"></div>
+
+    <script>
+        const numeros = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024];
+
+        document.getElementById('original-list').textContent = numeros.join(', ');
+
+        function somarNumeros() {
+            const soma = numeros.reduce((acc, num) => acc + num, 0);
+            document.getElementById('result').textContent = 'Soma total: ' + soma;
+        }
+    </script>
+</body>
+</html>

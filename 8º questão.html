@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtrar, Dobrar e Somar Números Pares</title>
+    <script>
+        function filtrarDobrarSomar() {
+            const listaDeNumeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+            
+            const numerosPares = listaDeNumeros.filter(function(numero) {
+                return numero % 2 === 0;
+            });
+
+            const numerosDobrados = numerosPares.map(function(numero) {
+                return numero * 2;
+            });
+
+            const soma = numerosDobrados.reduce(function(acumulador, numero) {
+                return acumulador + numero;
+            }, 0);
+
+            document.getElementById('resultado').innerHTML = "Soma dos números pares dobrados: " + soma;
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Filtrar, Dobrar e Somar Números Pares</h1>
+
+    <p>Clique no botão para filtrar os números pares, dobrá-los e somá-los a partir da lista: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</p>
+
+    <button onclick="filtrarDobrarSomar()">Calcular</button>
+
+    <p id="resultado"></p>
+
+</body>
+</html>

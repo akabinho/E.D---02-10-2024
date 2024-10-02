@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inverter Array</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Inverter Ordem de um Array</h1>
+    <p>Array original: <span id="original-array"></span></p>
+    <button onclick="inverterArray()">Inverter Array</button>
+    <div class="result" id="result"></div>
+
+    <script>
+        const letras = ['a', 'b', 'c', 'd', 'e', 'f'];
+
+        document.getElementById('original-array').textContent = letras.join(', ');
+
+        function inverterArray() {
+            const arrayInvertido = letras.reverse();
+            document.getElementById('result').textContent = 'Array invertido: ' + arrayInvertido.join(', ');
+        }
+    </script>
+</body>
+</html>

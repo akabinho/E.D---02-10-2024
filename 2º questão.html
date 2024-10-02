@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplicar Números por 5</title>
+    <script>
+        function multiplicarPorCinco() {
+            const listaDeNumeros = [1, 2, 3, 4, 5, 10, 20, 32, 40, 1002, 1320, 1326];
+            const numerosMultiplicados = listaDeNumeros.map(function(numero) {
+                return numero * 5;
+            });
+            document.getElementById('resultado').innerHTML = "Números multiplicados por 5: " + numerosMultiplicados.join(', ');
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Multiplicando Números por 5</h1>
+
+    <p>Clique no botão para multiplicar os números da lista: [1, 2, 3, 4, 5, 10, 20, 32, 40, 1002, 1320, 1326] por 5</p>
+
+    <button onclick="multiplicarPorCinco()">Multiplicar Números</button>
+
+    <p id="resultado"></p>
+
+</body>
+</html>

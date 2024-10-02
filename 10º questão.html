@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concatenar, Ordenar e Classificar Idades</title>
+    <script>
+
+        function concatenarClassificarIdades() {
+            const idadesGrupo1 = [25, 18, 32];
+            const idadesGrupo2 = [22, 30, 28];
+
+            const todasAsIdades = idadesGrupo1.concat(idadesGrupo2);
+
+            const idadesOrdenadas = todasAsIdades.sort(function(a, b) {
+                return a - b; 
+            });
+
+            const classificacao = idadesOrdenadas.map(function(idade) {
+                if (idade >= 18 && idade <= 25) {
+                    return idade + " - Jovem";
+                } else if (idade >= 26 && idade <= 35) {
+                    return idade + " - Adulto";
+                } else {
+                    return idade + " - Outro";
+                }
+            });
+
+            document.getElementById('resultado').innerHTML = "Idades classificadas: <br>" + classificacao.join('<br>');
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Concatenar, Ordenar e Classificar Idades</h1>
+
+    <p>Clique no botão para concatenar, ordenar e classificar as idades dos grupos:</p>
+
+    <p><strong>Grupo 1:</strong> [25, 18, 32]</p>
+    <p><strong>Grupo 2:</strong> [22, 30, 28]</p>
+
+    <!-- Botão para executar a função -->
+    <button onclick="concatenarClassificarIdades()">Classificar Idades</button>
+
+    <!-- Local onde o resultado será exibido -->
+    <p id="resultado"></p>
+
+</body>
+</html>

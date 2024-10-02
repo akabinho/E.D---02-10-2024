@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Desconto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cálculo de Desconto por Categoria de Cliente</h1>
+    <label for="categoria">Selecione a categoria:</label>
+    <select id="categoria">
+        <option value="premium">Premium</option>
+        <option value="regular">Regular</option>
+    </select>
+    <br><br>
+    <label for="valor">Digite o valor da compra:</label>
+    <input type="number" id="valor" />
+    <button onclick="calcularDesconto()">Calcular Desconto</button>
+    <div class="result" id="result"></div>
+
+    <script>
+        function calcularDesconto() {
+            const categoria = document.getElementById('categoria').value;
+            const valor = parseFloat(document.getElementById('valor').value);
+            let desconto, valorComDesconto;
+
+            if (categoria === 'premium') {
+                desconto = valor * 0.20; 
+            } else if (categoria === 'regular') {
+                desconto = valor * 0.10; 
+            } else {
+                desconto = 0;
+            }
+
+            valorComDesconto = valor - desconto;
+            document.getElementById('result').textContent = `Desconto: R$ ${desconto.toFixed(2)}, Valor final: R$ ${valorComDesconto.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>

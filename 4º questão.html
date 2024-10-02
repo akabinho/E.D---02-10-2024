@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concatenar Arrays de Nomes</title>
+    <script>
+        function concatenarArrays() {
+            const nomes1 = ['João', 'Maria', 'Lucas', 'André'];
+            const nomes2 = ['Pedro', 'Ana', 'Joana', 'Milena', 'Giulia'];
+            
+            const todosOsNomes = nomes1.concat(nomes2);
+
+            document.getElementById('resultado').innerHTML = "Arrays concatenados: " + todosOsNomes.join(', ');
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Concatenar Arrays de Nomes</h1>
+
+    <p>Clique no botão para concatenar os dois arrays de nomes:</p>
+
+    <p><strong>Array 1:</strong> ['João', 'Maria', 'Lucas', 'André']</p>
+    <p><strong>Array 2:</strong> ['Pedro', 'Ana', 'Joana', 'Milena', 'Giulia']</p>
+
+    <button onclick="concatenarArrays()">Concatenar Arrays</button>
+
+    <p id="resultado"></p>
+
+</body>
+</html>

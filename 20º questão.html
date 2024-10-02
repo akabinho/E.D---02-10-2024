@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificar Senha Válida</title>
+    <script>
+        function verificarSenha() {
+            
+            const senha = document.getElementById('senha').value;
+
+            if (senha.length >= 6) {
+                document.getElementById('resultado').innerHTML = "Senha válida!";
+            } else {
+                document.getElementById('resultado').innerHTML = "Senha inválida! A senha deve ter pelo menos 6 caracteres.";
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Verificar Senha Válida</h1>
+
+    <p>Insira a senha:</p>
+    <input type="password" id="senha" required>
+
+    <button onclick="verificarSenha()">Verificar Senha</button>
+
+    <p id="resultado"></p>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Preço com Desconto</title>
+    <script>
+
+        function calcularPrecoComDesconto() {
+
+            const quantidade = parseInt(document.getElementById('quantidade').value);
+            const precoUnitario = parseFloat(document.getElementById('precoUnitario').value);
+
+            let desconto = 0;
+            if (quantidade >= 10) {
+                desconto = 0.20; 
+            } else if (quantidade >= 5) {
+                desconto = 0.10; 
+            }
+
+            const precoTotalSemDesconto = quantidade * precoUnitario;
+
+            const valorDesconto = precoTotalSemDesconto * desconto;
+
+            const precoTotalComDesconto = precoTotalSemDesconto - valorDesconto;
+
+            document.getElementById('resultado').innerHTML = "Preço total com desconto: R$ " + precoTotalComDesconto.toFixed(2);
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Cálculo de Preço com Desconto</h1>
+
+    <p>Insira a quantidade de itens e o preço unitário:</p>
+    <input type="number" id="quantidade" placeholder="Quantidade de itens" required>
+    <input type="number" id="precoUnitario" placeholder="Preço unitário" step="0.01" required>
+
+    <button onclick="calcularPrecoComDesconto()">Calcular Preço com Desconto</button>
+
+    <p id="resultado"></p>
+
+</body>
+</html>

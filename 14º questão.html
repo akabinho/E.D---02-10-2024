@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo da Média</title>
+    <script>
+
+        function calcularMedia() {
+
+            const nota1 = parseFloat(document.getElementById('nota1').value);
+            const nota2 = parseFloat(document.getElementById('nota2').value);
+            const nota3 = parseFloat(document.getElementById('nota3').value);
+
+            const media = (nota1 + nota2 + nota3) / 3;
+
+            let situacao;
+            if (media >= 7.0) {
+                situacao = "Aprovado";
+            } else if (media >= 4.0) {
+                situacao = "Reprovado com direito a recuperação";
+            } else {
+                situacao = "Reprovado sem direito a prova de recuperação";
+            }
+
+            document.getElementById('resultado').innerHTML = "Média: " + media.toFixed(2) + " - " + situacao;
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Cálculo da Média de Notas</h1>
+
+    <p>Insira as 3 notas do aluno:</p>
+    <input type="number" id="nota1" placeholder="Nota 1" step="0.01" required>
+    <input type="number" id="nota2" placeholder="Nota 2" step="0.01" required>
+    <input type="number" id="nota3" placeholder="Nota 3" step="0.01" required>
+
+    <button onclick="calcularMedia()">Calcular Média</button>
+
+    <p id="resultado"></p>
+
+</body>
+</html>

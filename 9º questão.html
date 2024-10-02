@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concatenar Preços com Aumento</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Concatenar Listas de Preços</h1>
+    <p>Lista original de preços 1: <span id="precos1"></span></p>
+    <p>Lista original de preços 2: <span id="precos2"></span></p>
+    <button onclick="concatenarEAplicarAumento()">Concatenar e Aumentar</button>
+    <div class="result" id="result"></div>
+
+    <script>
+  
+        const precos1 = [10, 20, 30];
+        const precos2 = [15, 25, 35];
+        
+        document.getElementById('precos1').textContent = precos1.join(', ');
+        document.getElementById('precos2').textContent = precos2.join(', ');
+
+        function concatenarEAplicarAumento() {
+            const precosConcatenados = precos1.concat(precos2);
+            const precosComAumento = precosConcatenados.map(preco => (preco * 1.1).toFixed(2));
+            document.getElementById('result').textContent = 'Preços com aumento: ' + precosComAumento.join(', ');
+        }
+    </script>
+</body>
+</html>
