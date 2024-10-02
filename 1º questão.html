@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtrar Números Pares</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Filtrar Números Pares</h1>
+    <p>Lista original: <span id="original-list"></span></p>
+    <button onclick="filtrarPares()">Filtrar Números Pares</button>
+    <div class="result" id="result"></div>
+
+    <script>
+        const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+        document.getElementById('original-list').textContent = numeros.join(', ');
+
+        function filtrarPares() {
+            const numerosPares = numeros.filter(num => num % 2 === 0);
+            document.getElementById('result').textContent = 'Números pares: ' + numerosPares.join(', ');
+        }
+    </script>
+</body>
+</html>
